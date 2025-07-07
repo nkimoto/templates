@@ -1,6 +1,6 @@
 # Project Templates
 
-A collection of language-specific project templates using cookiecutter for modern development workflows.
+A collection of language-specific project templates using cookiecutter for modern development workflows. These templates can be used directly from external repositories via URL specification.
 
 ## Available Templates
 
@@ -47,9 +47,9 @@ pip install cookiecutter
 
 #### Python Project
 
-1. Generate a new Python project:
+1. Generate a new Python project using the template URL:
 ```bash
-cookiecutter python/
+cookiecutter https://github.com/nkimoto/templates.git --directory=python .
 ```
 
 2. Follow the interactive prompts:
@@ -94,9 +94,9 @@ python -m your_project_name.main
 
 #### TypeScript Project
 
-1. Generate a new TypeScript project:
+1. Generate a new TypeScript project using the template URL:
 ```bash
-cookiecutter typescript/
+cookiecutter https://github.com/your-username/templates.git --directory=typescript
 ```
 
 2. Follow the interactive prompts:
@@ -133,6 +133,44 @@ npm test
 
 # Start development server
 npm run dev
+```
+
+## Using Templates from External Repositories
+
+### Direct URL Usage
+
+You can use these templates directly from any Git repository by specifying the URL and directory:
+
+```bash
+# Python template
+cookiecutter https://github.com/username/repo-name.git --directory=python
+
+# TypeScript template
+cookiecutter https://github.com/username/repo-name.git --directory=typescript
+```
+
+### GitHub Repository Usage
+
+If the templates are hosted on GitHub:
+
+```bash
+# Using GitHub repository
+cookiecutter gh:username/repo-name --directory=python
+cookiecutter gh:username/repo-name --directory=typescript
+```
+
+### Local Development
+
+For local development and testing:
+
+```bash
+# Clone the repository
+git clone https://github.com/username/repo-name.git
+cd repo-name
+
+# Use local templates
+cookiecutter . --directory=python
+cookiecutter . --directory=typescript
 ```
 
 ## Template Structure
@@ -198,7 +236,7 @@ typescript/
 
 1. **Setup**:
    ```bash
-   cookiecutter python/
+   cookiecutter https://github.com/username/repo-name.git --directory=python
    cd your-project-name/
    uv sync --dev
    ```
@@ -226,7 +264,7 @@ typescript/
 
 1. **Setup**:
    ```bash
-   cookiecutter typescript/
+   cookiecutter https://github.com/username/repo-name.git --directory=typescript
    cd your-project-name/
    npm install
    ```
