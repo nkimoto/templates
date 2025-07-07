@@ -1,0 +1,18 @@
+{
+    "project_name": "My Python Project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_description": "A Python project with uv, ruff, and cursor configuration",
+    "python_version": "3.13",
+    "use_uv": "y",
+    "use_ruff": "y",
+    "use_cursor": "y",
+    "create_virtual_env": "y",
+    "license": [
+        "MIT",
+        "Apache-2.0",
+        "GPL-3.0",
+        "BSD-3-Clause",
+        "None"
+    ],
+    "open_source_license": "MIT"
+}
